@@ -27,9 +27,6 @@ The application uses React for the frontend, Node.js and Express.js for the back
 | Authentication | Firebase Authentication |
 | Backend Authentication | Firebase Admin SDK |
 
-
-*Note: The structure above is representative. Your actual source folders may differ.*
-
 ## 4. Features
 
 ### User Features
