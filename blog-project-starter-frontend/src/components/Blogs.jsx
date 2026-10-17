@@ -22,7 +22,7 @@ function Blogs() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        axios.get("http://localhost:5000/api/blogs").then((res) => {
+        axios.get("https://blog-portfolio-backend-j3om.onrender.com/api/blogs").then((res) => {
             console.log(res.data)
             setBlogs(res.data)
         }).catch(() => {
@@ -38,10 +38,10 @@ function Blogs() {
 
     const handleLike = async (blog_id) => {
         try {
-            const response = await axios.patch(`http://localhost:5000/api/blogs/like/${blog_id}`);
+            const response = await axios.patch(`https://blog-portfolio-backend-j3om.onrender.com/api/blogs/like/${blog_id}`);
             // After successfully updating the likes count in the backend, fetch the updated list of blogs
             if (response.status === 200) {
-                axios.get("http://localhost:5000/api/blogs").then((res) => {
+                axios.get("https://blog-portfolio-backend-j3om.onrender.com/api/blogs").then((res) => {
                     console.log(res.data)
                     setBlogs(res.data)
                 }).catch(() => {
@@ -70,12 +70,12 @@ function Blogs() {
             const token = await user.getIdToken();
 
             await axios.patch(
-                `http://localhost:5000/api/blogs/${blog._id}`,
+                `https://blog-portfolio-backend-j3om.onrender.com/api/blogs/${blog._id}`,
                 { newTitle, newContent },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
-            const response = await axios.get("http://localhost:5000/api/blogs");
+            const response = await axios.get("https://blog-portfolio-backend-j3om.onrender.com/api/blogs");
             setBlogs(response.data);
             alert("Blog updated successfully.");
         } catch (error) {
@@ -103,7 +103,7 @@ function Blogs() {
             const token = await user.getIdToken();
 
             await axios.delete(
-                `http://localhost:5000/api/blogs/${blog_id}`,
+                `https://blog-portfolio-backend-j3om.onrender.com/api/blogs/${blog_id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -112,7 +112,7 @@ function Blogs() {
             );
 
             const response = await axios.get(
-                "http://localhost:5000/api/blogs"
+                "https://blog-portfolio-backend-j3om.onrender.com/api/blogs"
             );
 
             setBlogs(response.data);
@@ -143,7 +143,7 @@ function Blogs() {
             const token = await user.getIdToken();
 
             await axios.post(
-                "http://localhost:5000/api/blogs",
+                "https://blog-portfolio-backend-j3om.onrender.com/api/blogs",
                 { newTitle, date, newContent, likes: 0 },
                 {
                     headers: {
@@ -152,7 +152,7 @@ function Blogs() {
                 }
             );
 
-            const response = await axios.get("http://localhost:5000/api/blogs");
+            const response = await axios.get("https://blog-portfolio-backend-j3om.onrender.com/api/blogs");
             setBlogs(response.data);
 
             setNewTitle('');
