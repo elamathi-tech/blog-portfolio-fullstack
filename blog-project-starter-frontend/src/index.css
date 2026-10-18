@@ -1,9 +1,27 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   font-size: 16px;
   background-color: #EBEBEB;
   padding: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
 }

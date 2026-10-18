@@ -17,3 +17,18 @@
     background: linear-gradient(to right, #ff5f3e, #fb8c4f);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+
+@media (max-width: 768px) {
+    nav {
+        max-width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav a,
+    nav button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
